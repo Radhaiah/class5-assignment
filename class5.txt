@@ -1,0 +1,358 @@
+1.a. Print odd numbers in an array by IIFE
+
+(function (arr){
+    let odd=[];
+    for(var i in arr){
+        if(arr[i]%2==1)
+        {
+            odd.push(arr[i])
+        }
+    }
+    console.log(`odd numbers are ${odd}`)
+})([1,2,3,4,5,6,7,8,9,10])
+
+o\p:odd numbers are 1,3,5,7,9
+
+1.a Print odd numbers in an array by anonmous
+
+let getodd=function(arr)
+{
+    let odd=[];
+    for( var i in arr)
+    {
+        if(arr[i]%2==1)
+        {
+            odd.push(arr[i]);
+            
+        }
+    }console.log(`odd numbers are ${odd}`)
+}
+let arr=[1,2,3,4,5,6,7,8,9,10]
+getodd(arr);
+
+odd numbers are 1,3,5,7,9
+
+1.b Convert all the strings to title caps in a string array by using IIFE
+
+(function(arr1){
+    var t=arr1.split(' ');
+    for(let i=0;i<t.length;i++){
+       var s=t[i].split("");
+       s[0]=s[0].toUpperCase();
+       s=s.join("")
+       t[i]=s
+      
+    }
+    console.log(t.join(" "))
+})
+("hi radhaiah");
+
+O/p: Hi Radhaiah
+
+1.b Convert all the strings to title caps in a string array by using anonymous
+
+let caps=function(arr1){
+    var t=arr1.split(' ');
+    for(let i=0;i<t.length;i++){
+       var s=t[i].split("");
+       s[0]=s[0].toUpperCase();
+       s=s.join("")
+       t[i]=s
+      
+    }
+    console.log(t.join(" "))
+}
+let arr1="hi radhaiah";
+caps(arr1)
+
+O/p: Hi Radhaiah
+
+
+1.c Sum of all numbers in an array using IIFE
+
+(function (arr){
+    let sum=0;
+    for(var i in arr){
+       sum=sum+arr[i]
+    }
+    console.log(`sum ${sum}`)
+})([1,2,3,4,5,6,7,8,9,10])
+
+O/P sum 55
+
+1.c Sum of all numbers in an array using Anonymous
+
+let getadd=function(arr)
+{
+    let sum=0;
+    for( var i in arr)
+    {
+       sum=sum+arr[i];
+    }console.log(`sum ${sum}`)
+}
+let arr=[1,2,3,4,5,6,7,8,9,10]
+getadd(arr);
+
+O/P sum 55
+
+1.d Return all the prime numbers in an array by using IIFE
+
+(function getprime(array){
+  
+  for(var i of array)
+  {
+    var count=0;
+    for(var j=1;j<=i;++j)
+    {
+      if(i%j==0)
+      
+        count=count+1;
+      
+      
+    }
+    if(count==2)
+    console.log(`prime number ${i}`)
+  }
+})([1,2,3,4,5,6,7])
+
+O/P: prime numbers are 2
+     prime numbers are 3
+     prime numbers are 5
+     prime numbers are 7
+
+1.d Return all the prime numbers in an array by using anonymous
+
+let getprime =function(array){
+  
+  for(var i of array)
+  {
+    var count=0;
+    for(var j=1;j<=i;++j)
+    {
+      if(i%j==0)
+      
+        count=count+1;
+      
+      
+    }
+    if(count==2)
+    console.log(`prime numbers are ${i}`)
+  }
+}
+getprime([1,2,3,4,5,6,7,8,9,11])
+
+O/P: prime numbers are 2
+     prime numbers are 3
+     prime numbers are 5
+     prime numbers are 7
+     prime numbers are 11
+
+1.e Return all the palindromes in an array by using anonymous function
+
+function poli(arr) {   
+    var temp=[];         
+    for(var i of arr){        
+        var s=i;             
+        var s1=s.split("");          
+       s1=s1.reverse();              
+       s1=s1.join("");               
+        if(s==s1)                    
+         temp.push(s);             }   
+                return temp.join(" ")    
+              } 
+ var arr=["121","123","12321"]; 
+console.log(poli(arr));
+
+O/P: 121,12321
+
+1.e Return all the palindromes in an array by using IIFE function
+
+(function poli(arr) {   
+    var temp=[];         
+    for(var i of arr){        
+        var s=i;             
+        var s1=s.split("");          
+       s1=s1.reverse();              
+       s1=s1.join("");               
+        if(s==s1)                    
+         temp.push(s);             }   
+         console.log( temp.join(" ") )   
+              }) 
+               (["121","123","12321"]);
+
+O/P: 121,12321
+
+1.f Return median of two sorted arrays of same size by using anonymous
+
+let getmedian=function(a){
+    let res=[];
+    let i=a.length;
+    let k=i%2;
+    let j=i/2;
+    if(k==0)
+    {
+      res.push((a[(j-1)]+a[(j)])/2);
+      return res;
+    }
+  }
+  let a1=[1,2,3,4,5];
+  let a2=[8,7,8,9,10];
+  let a=[...a1,...a2]
+  console.log(getmedian(a));
+
+O/P: 6.5; 
+
+1.f Return median of two sorted arrays of same size by using IIFE
+
+(function getmedian(a1,a2){
+    let a=[...a1,...a2]
+    let res=[];
+    let i=a.length;
+    let k=i%2;
+    let j=i/2;
+    if(k==0)
+    {
+      res.push((a[(j-1)]+a[(j)])/2);
+      console.log(res);
+    }
+  })([1,2,3,4,5],[8,7,8,9,10]);
+
+
+O/P: 6.5;
+
+1.g Remove duplicates from an array by using anonymous function
+
+let caps=function(arr){
+    var temp=[]
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]==arr[i+1]){
+            arr.splice(arr[i],1)
+            
+        }
+        temp.push(arr[i])
+      
+    }
+    console.log(temp)
+}
+let arr=[1,2,2,3,4,4,5,6,6];
+caps(arr);
+
+O/P: 1,2,3,4,5,6
+
+1.g Remove duplicates from an array by using IIFE function
+
+(function(arr){
+    var temp=[]
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]==arr[i+1]){
+            arr.splice(arr[i],1)
+            
+        }
+        temp.push(arr[i])
+      
+    }
+    console.log(temp)
+})
+([1,2,2,3,4,4,5,6,6]);
+
+
+O/P: 1,2,3,4,5,6
+
+3.a Print odd numbers in an array by using arrow function
+
+let getodd=(arr)=>
+{
+    let odd=[];
+    for( var i in arr)
+    {
+        if(arr[i]%2==1)
+        {
+            odd.push(arr[i]);
+            
+        }
+    }console.log(`odd numbers are ${odd}`)
+}
+let arr=[1,2,3,4,5,6,7,8,9,10]
+getodd(arr);
+
+o/p: 1,3,5,7,9
+
+3.b Convert all the strings to title caps in a string array by using IIFE
+
+let caps=(arr1)=>{
+    var t=arr1.split(' ');
+    for(let i=0;i<t.length;i++){
+       var s=t[i].split("");
+       s[0]=s[0].toUpperCase();
+       s=s.join("")
+       t[i]=s
+      
+    }
+    console.log(t.join(" "))
+}
+let arr1="hi radhaiah";
+caps(arr1)
+
+O/p: Hi Radhaiah
+
+
+3.c Sum of all numbers in an array by using arrow function
+
+let getadd=(arr)=>
+{
+    let sum=0;
+    for( var i in arr)
+    {
+       sum=sum+arr[i];
+    }console.log(`sum ${sum}`)
+}
+let arr=[1,2,3,4,5,6,7,8,9,10]
+getadd(arr);
+
+O/P sum 55
+
+3.d Return all the prime numbers in an array by using arrow function
+
+let getprime =(array)=>{
+  
+  for(var i of array)
+  {
+    var count=0;
+    for(var j=1;j<=i;++j)
+    {
+      if(i%j==0)
+      
+        count=count+1;
+      
+      
+    }
+    if(count==2)
+    console.log(`prime numbers are ${i}`)
+  }
+}
+getprime([1,2,3,4,5,6,7,8,9,11])
+
+O/P: prime numbers are 2
+     prime numbers are 3
+     prime numbers are 5
+     prime numbers are 7
+     prime numbers are 11
+
+3.e Return all the palindromes in an array by using arrow function
+
+let poli=(arr)=> {   
+    var temp=[];         
+    for(var i of arr){        
+        var s=i;             
+        var s1=s.split("");          
+       s1=s1.reverse();              
+       s1=s1.join("");               
+        if(s==s1)                    
+         temp.push(s);             }   
+         console.log( temp.join(" ") )   
+              } 
+    var arr=["121","123","12321"]; 
+    poli(arr);
+
+O/P: 121,12321
+
